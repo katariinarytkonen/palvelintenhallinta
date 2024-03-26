@@ -1,2 +1,2 @@
-# ICI001AS3A-3005
+# Infra-as-code
 Homework reports for Infra as Code course taught by Tero Karvinen

@@ -3,6 +3,8 @@ Ao. vastaukset ovat osa kotitehtävää H2 Soitto kotiin Haaga-Helian Palvelinte
 Harjoituksen tehtävänannot löytyvät osoitteesta :
 https://terokarvinen.com/2024/configuration-management-2024-spring/
 
+Kun olin saanut kirjoitettua kaikki tehtävät githubiin, päivitin vahingossa sivun sunnuntai-iltana klo 22.30 , jolloin kaikki tietysti katosi. En ollut tallentanut mitään, joten jouduin aloittamaan raportin kirjoituksen uudestaan. Onneksi suurin osa tekstistä ja kuvista oli tallessa Wordissa, mutta osa lähteistä ja tiivistelmistäni hävisi, ja raportin kielen hienosäätö jäi nyt hieman vaiheeseen.
+
 
 #### x, Lue ja Tiivistä
 #### Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant
@@ -22,6 +24,9 @@ https://terokarvinen.com/2024/configuration-management-2024-spring/
 ~ master$ sudo apt-get -y install salt-master, slave$ sudo apt-get -y install salt-minion 
 
 #### Karvinen 2014: Hello Salt Infra-as-Code
+ 
+~ Salt-moduulit asentavat ja konfiguroivat asioita
+~ Idempotenssi: Tee jos ei ole jo, jos on älä tee mitään. Kun ajetaan idempotentti käsky ensimmäisen kerran, se muuttaa jotain, kun ajetaan sama käsky toisen kerran, se toteuttaa käskyn, mutta mitään ei muutu.
 
 #### a) Asenna kaksi virtuaalikonetta samaan verkkoon. Osoita, että pystyt käyttämään kumpaakin konetta (esim 'vagrant ssh t001'). Osoita, että koneet voivat pingata toisiaan. (Tämä tehtävä on helpointa tehdä Vagrantilla)
         mkdir twohost/ 
@@ -133,6 +138,7 @@ En osannut täysin tätä tehtävää. Löysin opettajan esimerkkisivun (https:/
 
 #### Lähteet
 Karvinen 2024: Configuration management 2024 spring. Luettavissa:
+
 https://terokarvinen.com/2024/configuration-management-2024-spring/. Luettu 5.4.2024
 
 Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant. Luettavissa:
@@ -144,15 +150,19 @@ Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux. 
 https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/ Luettu 5.4.2024
  
 Linux List Users: How to Display All Users in the Terminal?. Luettavissa:
+
 https://www.hostinger.com/tutorials/how-to-see-system-users-in-ubuntu-linux-vps/#How_to_List_Users_in_Linux. Luettu 7.4.2024
 
 Karvinen 2018: Salt States – I Want My Computers Like This. Luettavissa:
+
 https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/ Luettu: 7.4.2024
 
 Karvinen 2024: Hello Salt Infra-as-Code. Luettavissa:
+
 https://terokarvinen.com/2024/hello-salt-infra-as-code/ Luettu 7.4.2024
 
 Karvinen 2018: Configure Windows and Linux with Single Salt Module. Luettavissa:
+
 https://terokarvinen.com/2018/configure-windows-and-linux-with-salt-jinja-if-else-and-grains/ Luettu 7.4.2024
 
 

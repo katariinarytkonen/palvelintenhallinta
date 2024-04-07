@@ -26,7 +26,8 @@ Kun olin saanut kirjoitettua kaikki tehtävät githubiin, päivitin vahingossa s
 #### Karvinen 2014: Hello Salt Infra-as-Code
  
 ~ Salt-moduulit asentavat ja konfiguroivat asioita
-~ Idempotenssi: Tee jos ei ole jo, jos on älä tee mitään. Kun ajetaan idempotentti käsky ensimmäisen kerran, se muuttaa jotain, kun ajetaan sama käsky toisen kerran, se toteuttaa käskyn, mutta mitään ei muutu.
+~ Idempotenssi: Tee jos ei ole jo, jos on älä tee mitään. 
+~ Kun ajetaan idempotentti käsky ensimmäisen kerran, se muuttaa jotain, kun ajetaan sama käsky toisen kerran, se toteuttaa käskyn(Succeeded), mutta mitään ei muutu.
 
 #### a) Asenna kaksi virtuaalikonetta samaan verkkoon. Osoita, että pystyt käyttämään kumpaakin konetta (esim 'vagrant ssh t001'). Osoita, että koneet voivat pingata toisiaan. (Tämä tehtävä on helpointa tehdä Vagrantilla)
         mkdir twohost/ 

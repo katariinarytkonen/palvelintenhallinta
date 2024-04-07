@@ -9,6 +9,23 @@ https://terokarvinen.com/2024/configuration-management-2024-spring/
 #### a) Asenna kaksi virtuaalikonetta samaan verkkoon. Osoita, että pystyt käyttämään kumpaakin konetta (esim 'vagrant ssh t001'). Osoita, että koneet voivat pingata toisiaan. (Tämä tehtävä on helpointa tehdä Vagrantilla)
     mkdir 
 
+Alkuun luon uuden directoryn twohost, johon tallennan ao. tekstin nimellä Vagrantfile. Tiedosto sisältää tarvittavat konfiguraatiot, jotta kaksi virtuaalikonetta, t001 ja t002 asentuvat oikein. Laitan virtuaalikoneet päälle
+
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/669315b4-32a4-4b5f-be33-5af7f9178750)
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/1e2aba6d-2861-4a8a-a721-fe3e059c8e31)
+
+Nyt virtuaalikoneeni t001 ja t002 ovat pystyssä, ja voin ottaa näihin etäyhteyden komennolla vagrant ssh t001 ja vagrant ssh t002. Testaan että molemmat toimivat, ja poistun etäyhteyksistä exit komennolla.
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/b8660582-f324-4181-bc34-0fde81eefd83)
+
+Testaan myös, että koneet voivat pingata toisiaan selvittämällä molempien koneiden ip-osoitteet ip a komennolla. Koneen t001 ip-osoite on 192.168.88.101 t001 ja t002 osoite 192.168.88.102.
+
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/306c6878-aa67-425f-9238-238c524124ce)
+
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/e35c0fea-c8df-44dd-ad88-e80d404109ce)
+
+Kaikki toimii molempiin suuntiin, ja näin olen asentanut kaksi virtuaalikonetta samaan verkkoon, ja pystyin käyttämään kumpaakin ja koneet pystyvät löytämään toisensa.
+
+
 ####  b) Asenna Saltin herra-orja arkkitehtuuri toimimaan verkon yli. (Verkko voi olla virtuaalinen verkko paikallisten virtuaalikoneiden välillä, kuten muissakin alakohdissa)
         sudo apt-get update
         sudo apt-get -y install salt-master
@@ -79,6 +96,10 @@ Ylläolevilla komennoilla keräsin erinäistä teknistä tietoa orjista verkon y
 
 ![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/be91e75a-6159-469d-bb52-10b2dac5f10f)
 
+#### f) Hello, IaC. Tee infraa koodina kirjoittamalla /srv/salt/hello/init.sls. Aja tila jollekin orjalle. Tila voi esimerkiksi tehdä esimerkkitiedoston johonkin hakemistoon. Testaa toisella komennolla, että pyytämäsi muutos on todella tehty.
+
+En osannut täysin tätä tehtävää. Löysin opettajan esimerkkisivun (https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/), jonka mukaan sain jotain tehtyä, mutta en täysin ymmärtänyt mihin tehtävänannossa annettu koodi olisi pitänyt laittaa. 
+
 
 
 #### Lähteet
@@ -95,3 +116,14 @@ https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubu
  
 Linux List Users: How to Display All Users in the Terminal?. Luettavissa:
 https://www.hostinger.com/tutorials/how-to-see-system-users-in-ubuntu-linux-vps/#How_to_List_Users_in_Linux. Luettu 7.4.2024
+
+Karvinen 2018: Salt States – I Want My Computers Like This. Luettavissa:
+https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/ Luettu: 7.4.2024
+
+Karvinen 2024: Hello Salt Infra-as-Code. Luettavissa:
+https://terokarvinen.com/2024/hello-salt-infra-as-code/ Luettu 7.4.2024
+
+Karvinen 2018: Configure Windows and Linux with Single Salt Module. Luettavissa:
+https://terokarvinen.com/2018/configure-windows-and-linux-with-salt-jinja-if-else-and-grains/ Luettu 7.4.2024
+
+

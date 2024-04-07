@@ -1,13 +1,36 @@
 Ao. vastaukset ovat osa kotitehtävää H2 Soitto kotiin Haaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen. Harjoituksia tehtiin 5.4. ja 7.4. kotona omalla tietokoneella Lenovo Yoga Slim 7 14ARE05. Hyödynsin tehtävissä virtuaalikoneita ja Virtualbox-alustaa. Kirjoitin joihinkin tehtäviin tehtävänannon jälkeen olennaiset komennot, jotta ne löytyvät helposti.
 
-Harjoitusten tehtävänannot löytyvät osoitteesta :
+Harjoituksen tehtävänannot löytyvät osoitteesta :
 https://terokarvinen.com/2024/configuration-management-2024-spring/
 
 
-#### Lue ja Tiivistä
+#### x, Lue ja Tiivistä
+#### Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant
+
+~ Vagrantin avulla voi luoda automaattisesti Virtualboxiin virtuaalikoneita ja automatisoida SSH-kirjautumisen komentotulkissa ilman graafista käyttöliittymää minuuteissa
+
+~ Vagrantin ja virtualboxin saa asennettua Debianiin ja Ubuntuun komennolla sudo apt-get install vagrant virtualbox
+
+#### Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux
+
+~ Salt on ohjelma, jonka avulla voi kontrolloida tuhansia tietokoneita verkon yli. 
+
+~ Tämä on ns. herra-orja-arkkitehtuuria, jossa orjat, eli kontrolloidut tietokoneet voivat olla missä vain, kuten palomuurin takana tai tuntemattomassa osoitteessa
+
+~ Vain herran tarvitsee olla julkisella serverillä ja tunnetussa osoitteessa.
+
+~ master$ sudo apt-get -y install salt-master, slave$ sudo apt-get -y install salt-minion 
+
+#### Karvinen 2014: Hello Salt Infra-as-Code
 
 #### a) Asenna kaksi virtuaalikonetta samaan verkkoon. Osoita, että pystyt käyttämään kumpaakin konetta (esim 'vagrant ssh t001'). Osoita, että koneet voivat pingata toisiaan. (Tämä tehtävä on helpointa tehdä Vagrantilla)
-    mkdir 
+        mkdir twohost/ 
+        cd twohost/
+        notepad Vagrantfile
+        vagrant ssh t001
+        exit
+        ip a
+        
 
 Alkuun luon uuden directoryn twohost, johon tallennan ao. tekstin nimellä Vagrantfile. Tiedosto sisältää tarvittavat konfiguraatiot, jotta kaksi virtuaalikonetta, t001 ja t002 asentuvat oikein. Laitan virtuaalikoneet päälle
 
@@ -99,6 +122,12 @@ Ylläolevilla komennoilla keräsin erinäistä teknistä tietoa orjista verkon y
 #### f) Hello, IaC. Tee infraa koodina kirjoittamalla /srv/salt/hello/init.sls. Aja tila jollekin orjalle. Tila voi esimerkiksi tehdä esimerkkitiedoston johonkin hakemistoon. Testaa toisella komennolla, että pyytämäsi muutos on todella tehty.
 
 En osannut täysin tätä tehtävää. Löysin opettajan esimerkkisivun (https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/), jonka mukaan sain jotain tehtyä, mutta en täysin ymmärtänyt mihin tehtävänannossa annettu koodi olisi pitänyt laittaa. 
+
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/29ab7323-6e3e-4b1d-a440-826de0f31304)
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/a340f6d3-54cd-4a77-b167-2ae902eeec18)
+![image](https://github.com/katariinarytkonen/ICI001AS3A-3005/assets/164856665/f3675987-77eb-42a7-9083-0fd31eb970db)
+
+
 
 
 

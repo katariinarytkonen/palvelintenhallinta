@@ -1,5 +1,5 @@
 ### a) Online. Tee uusi varasto GitHubiin (tai Gitlabiin tai mihin vain vastaavaan palveluun). Varaston nimessä ja lyhyessä kuvauksessa tulee olla sana "summer". Aiemmin tehty varasto ei kelpaa. 
- Luon uuden repositoryn GitHubiin graafisessa liittymässä, valitsen tälle nimen, lisään descriptionin ja readme.filen ja lisenssiksi GNU General Public License 3.
+ Luon uuden repositoryn GitHubiin graafisessa liittymässä, valitsen tälle nimen, lisään descriptionin ja README.filen ja lisenssiksi GNU General Public License 3.
  
  ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/93ae00fa-1b92-4fd2-b49e-35c60120f979)
 
@@ -71,6 +71,38 @@ Ajoin git log-kommennon uudelleen, mutta havaitsin että muutokseni eikä muuttu
 Nyt lokissa näkyivät päivityksetkin, joten saatoin unohtaa aiemmassa kohdassa ajaa päivitykset githubin serverille git pull & git pushilla.
 
 Lokissa näkyy ensimmäisenä uusimmat päivitykset. Author-kohdasta näkee päivittäjän nimen ja sähköpostiosoitteen, sekä päivän ja ajan jolloin muutos on tehty. Tämän alla näkyy commit message, gitin koodia, ja vihreällä näkyy tehty muutettu teksti.
+
+## e) Suolattu rakki. Aja Salt-tiloja omasta varastostasi. (Salt tiedostot mistä vain hakemistosta "--file-root teronSaltHakemisto". Esimerkiksi 'sudo salt-call --local --file-root srv/salt/ state.apply', huomaa suhteellinen polku.)
+    salt-call
+    sudo apt-get install salt-minion
+    mkdir /etc/apt/keyrings
+    cd /etc/apt/keyrings
+    sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/12/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main" | sudo tee /etc/apt/sources.list.d/salt.list
+   
+   
+Aloitin ajamaan Salt-tiloja omasta varastostani ao. komennolla, mutta tämä ei tuottanut tulosta, herjasi command not foundia.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/56f72b62-43bd-4434-a727-818cf29b299b)
+
+Tein hieman vianselvitystä, ja kävin aiemmasta kotitehtäväraportistani tarkistamassa erinäisiä salt-komentoja. Komento salt-call ei myöskään tuota tulosta, ja näin ilmeni että virtuaaliDebianillani ei ollutkaan Saltia asennettuna. Yritin asentaa tätä paketinhallinnan kautta, mutta ohjelma ei asentunut. Virheviestinä on Unable to locate package salt-minion
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/8dfd4ea2-84d4-483e-95a6-76f7c53248bd)
+
+Muistin että oppitunnilla tuli tämä sama ongelma ilmi, eikä juuri tässä kyseisessä Linux-versiossa (Debian 12 bookworm) ollut mahdollista asentaa Saltia tällä tavoin. Salt täytyi siis asentaa hieman perusteellisemmin kuin pelkällä sudo apt-get install salt-minion komennolla.
+
+Löysin ohjeet ja tarvittavat komennot Saltin sivuilta(https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/debian.html#install-salt-on-debian-12-bookworm-amd64), ja valitsin oikean Linux-version, mitä olin asentamassa.
+Sain sivulta tarvittavat komennot(listattu tehtävänannon jälkeen), joilla sain kuin sainkin Saltin asennettua Debianiin.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/17cb2fd2-9ad9-4a02-9cb4-3e5bc2bb675c)
+
+Nyt kun testasin salt-callia uudestaan, oli kaikki toiminnassa, joten pääsin varsinaisen tehtävän pariin.
+
+
+
+
+
+
 
 ## Lähteet
 

@@ -1,9 +1,29 @@
-### a) Online. Tee uusi varasto GitHubiin (tai Gitlabiin tai mihin vain vastaavaan palveluun). Varaston nimessä ja lyhyessä kuvauksessa tulee olla sana "summer". Aiemmin tehty varasto ei kelpaa. 
+Ao. vastaukset ovat osa kotitehtävää H3 Toimiva versio Haaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen. Tein harjoituksia 13.4. ja 14.4. kotona omalla tietokoneella Lenovo Yoga Slim 7 14ARE05. Hyödynsin tehtävissä virtuaalikonetta(Debian 12 bookworm) ja Virtualbox-alustaa. Kirjoitin joihinkin tehtäviin tehtävänannon jälkeen olennaiset komennot, jotta ne löytyvät myöhemminkin helposti.
+
+Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2024/configuration-management-2024-spring/
+
+## x) Lue ja tiivistä. 
+### Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git? 
+-
+
+### Gitin käyttö on lähinnä 'git add . && git commit; git pull && git push'. Selitä tuon komennon jokainen osa. Käytä apuna itse valitsemiasi lähteitä ja viittaa niihin
+
+- Git add .  Lisää jotain Gitiin
+- Git Commit; Tallentaa työn anna commit-message
+- git pull: vetää gitin serveriltä uusimmat tiedot
+- git push: siirtää tiedot serverille
+
+- && "If success, then continue". kaksi näitä peräkkäin tarkoittaa sitä, että mikäli käsky vasemmalla 
+
+### Varaston terokarvinen/suolax/ historia, eli loki ja muutokset. Kätevimmin komentokehotteesta 'git clone https://github.com/terokarvinen/suolax.git; cd suolax/; git log --patch --color|less -R'. Wepistäkin saattaa onnistua kliksuttelemalla "Commits".
+
+
+## a) Online. Tee uusi varasto GitHubiin (tai Gitlabiin tai mihin vain vastaavaan palveluun). Varaston nimessä ja lyhyessä kuvauksessa tulee olla sana "summer". Aiemmin tehty varasto ei kelpaa. 
  Luon uuden repositoryn GitHubiin graafisessa liittymässä, valitsen tälle nimen, lisään descriptionin ja README.filen ja lisenssiksi GNU General Public License 3.
  
  ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/93ae00fa-1b92-4fd2-b49e-35c60120f979)
 
- ### b) Dolly. Kloonaa edellisessä kohdassa tehty uusi varasto itsellesi, tee muutoksia omalla koneella, puske ne palvelimelle, ja näytä, että ne ilmestyvät weppiliittymään.
+ ## b) Dolly. Kloonaa edellisessä kohdassa tehty uusi varasto itsellesi, tee muutoksia omalla koneella, puske ne palvelimelle, ja näytä, että ne ilmestyvät weppiliittymään.
     cd code
     git clone (+ url)
     ssh-keygen        
@@ -39,7 +59,7 @@ Seuraavaksi loin directoryyn uuden tiedoston Testi.md , ja ajoin tämän Githubi
 
 Kaikki toimi, eli sain kloonattua edellisessä tehtävässä luomani repositoryn(varaston) itselleni, tein muutoksia omalla tietokoneellani, puskin ne palvelimelleni ja näytin että ne ilmestyivät web-liittymään.
 
-### c) Doh! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
+## c) Doh! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
 
     git add
     git reset --hard
@@ -53,7 +73,7 @@ Oletan tyhmän muutoksen tarkoittavan esim jotain tiedostoa, mitä ei ollut tark
 Varmistan vielä että poistuihan väärä tiedostoni; poistui.
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/d6e97f0d-faf9-48c3-bf05-e70f798d6aed)
 
-### Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköpostiosoitteesi näkyy haluamallasi tavalla ja korjaa tarvittaessa.
+## Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköpostiosoitteesi näkyy haluamallasi tavalla ja korjaa tarvittaessa.
 
     git log –patch
     git config --global user.email ""
@@ -79,6 +99,7 @@ Lokissa näkyy ensimmäisenä uusimmat päivitykset. Author-kohdasta näkee päi
     cd /etc/apt/keyrings
     sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/12/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
     echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main" | sudo tee /etc/apt/sources.list.d/salt.list
+    sudo salt-call --local --file-root srv/salt/ state.apply
    
    
 Aloitin ajamaan Salt-tiloja omasta varastostani ao. komennolla, mutta tämä ei tuottanut tulosta, herjasi command not foundia.
@@ -98,7 +119,35 @@ Sain sivulta tarvittavat komennot(listattu tehtävänannon jälkeen), joilla sai
 
 Nyt kun testasin salt-callia uudestaan, oli kaikki toiminnassa, joten pääsin varsinaisen tehtävän pariin.
 
+Annoin komennon sudo salt-call --local --file-root srv/salt/ state.apply, mutta virhe-ilmoitus tulee. 
 
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/75794460-0d20-4962-837d-caa2cb9e61ac)
+
+Kone ei löydä top-tiedostoa. Yritin löytää apuja google-haulla, ja luin tarkemmin top-tiedostosta. Tässä kohtaa ehkä täytyi käydä luomassa top.sls tiedosto srv/salt kansioon, jotta komento onnistuisi.
+
+Käyn opettajan githubista hakemassa Salt-tiloja, ja yritän luoda top.sls-tiedostoa, mutta saan herjan että permission denied:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/a04ac7ea-5911-44f3-9a6c-4be5c95f2a9e)
+
+Testaan muokata top.sls tiedostoa sudona, ja nyt onnistuu.
+
+Käyn myös lisäämässä kansioon hello ja favourite-tilat, jotka saan opettajan sivuilta myöskin.
+
+Tässä kohtaa aloin katsomaan polkua, ja aloin miettimään olisiko minun pitänyt vielä olla erikseen /srv/saltissa, kun nyt olen pelkässä /srv/, johon loin tiedostot..
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/142631d8-c35d-4b5b-ab66-1e68f75fbbd8)
+
+Muokkaan komentoa niin että poistan siitä polusta tuon saltin, jolloin näyttää toimivan tuon osalta, mutta tosin tästä tulee toinen virhe-ilmoitus:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/4d805671-7b49-4d1e-b032-8238875042c9)
+
+Huomasin että syntaksissa oli virhe, toisessa tiedostossa taisi olla sana favourite monikossa ja toisessa oli yksikössä, joten eihän tämä tietenkään toimi. Korjasin tämän, ja ajoin komennon uudelleen, jolloin viimeinkin toimi.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/15d9161e-1f0f-4021-98c5-58d0a516bc17)
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/726c3fad-6748-4e7e-8e7d-68035df59e34)
+
+Tästä näkyy että asentui uusia paketteja, jotkut olin tosin testimielessä jo asentanut itse.
 
 
 
@@ -106,7 +155,27 @@ Nyt kun testasin salt-callia uudestaan, oli kaikki toiminnassa, joten pääsin v
 
 ## Lähteet
 
+Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git? Luettavissa:
+https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F Luettu 14.4.2024
 
+https://github.com/terokarvinen/suolax/blob/main/srv/salt/favourites/init.sls Luettu: 14.4.2024
+
+https://github.com/terokarvinen/suolax/tree/main/srv/salt/hello Luettu 14.4.2024
+
+https://github.com/terokarvinen/suolax/blob/main/srv/salt/top.sls Luettu 14.4.2024
+
+https://docs.saltproject.io/en/latest/ref/states/top.html Luettu 14.4.2024
+
+https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/debian.html#install-salt-on-debian-12-bookworm-amd64 Luettu 14.4.2024
+
+Henry-Stocker 2023: The power of >, >>, &, &&, and || on Linux. Luettavissa:
+https://www.networkworld.com/article/972419/the-power-of-and-on-linux.html Luettu 14.4.2024
+
+Karvinen 2021: Salt Run Command Locally. Luettavissa:
+https://terokarvinen.com/2021/salt-run-command-locally/ Luettu 14.4.2024
+
+Karvinen 2024: Configuration Management 2024 Spring. Luettavissa:
+https://terokarvinen.com/2024/configuration-management-2024-spring/ Luettu 13.4.2024
 
 
 

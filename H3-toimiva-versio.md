@@ -4,7 +4,9 @@ Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2
 
 ## x) Lue ja tiivistä. 
 ### Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git? 
--
+- Git on versionhallintatyökalu, joka eroaa muista vastaavista siinä miten se luokittelee dataa.
+- Git on siinä mielessä turvallinen työkalu, että tietoja on verrattain hankala saada poistettua varastoista niin ettei niihin pääse käsiksi enää ollenkaan, sillä kaikki muutokset tallentuvat lokiin.
+
 
 ### Gitin käyttö on lähinnä 'git add . && git commit; git pull && git push'. Selitä tuon komennon jokainen osa. Käytä apuna itse valitsemiasi lähteitä ja viittaa niihin
 
@@ -13,7 +15,7 @@ Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2
 - git pull: päivittää gitin serveriltä uusimmat tiedot muokkauksista
 - git push: siirtää tiedot kaikista muokkauksista gitin serverille
 
-- && If success, then continue. (Henry-Stocker 2023)
+- && If success, then continue. (Henry-Stocker 2023). Seuraava käsky toteutetaan vain, mikäli ensimmäinen onnistuu.
 
 ### Varaston terokarvinen/suolax/ historia, eli loki ja muutokset. Kätevimmin komentokehotteesta 'git clone https://github.com/terokarvinen/suolax.git; cd suolax/; git log --patch --color|less -R'. Wepistäkin saattaa onnistua kliksuttelemalla "Commits".
 - suolax on perustettu ke 10.4. klo 19.28, ja sinne on tehty yhteensä kahdeksan committia

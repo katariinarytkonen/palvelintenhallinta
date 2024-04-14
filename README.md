@@ -1,2 +1,2 @@
-# Infra-as-code
-Homework reports for Infra as Code course taught by Tero Karvinen
+# Configuration-Management-Systems
+Homework reports for Configuration Management Systems course taught by Tero Karvinen

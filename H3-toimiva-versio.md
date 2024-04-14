@@ -53,6 +53,28 @@ Oletan tyhmän muutoksen tarkoittavan esim jotain tiedostoa, mitä ei ollut tark
 Varmistan vielä että poistuihan väärä tiedostoni; poistui.
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/d6e97f0d-faf9-48c3-bf05-e70f798d6aed)
 
+### Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköpostiosoitteesi näkyy haluamallasi tavalla ja korjaa tarvittaessa.
+
+    git log –patch
+    git config --global user.email ""
+    git config --global user.name ""
+
+Tarkistelen varastoni lokia komennolla komennolla git log --patch
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/e2513ec6-193f-4aa4-b21b-f117a1a6fa07)
+
+Heti alkuun huomasin että nimi on oikein, mutta sähköposti ei, joten korjasin nuo git config --global user.email komennolla. 
+Tämän jälkeen tein muutoksia testitiedostooni saadakseni lokiin hieman enemmän sisältöä.
+Ajoin git log-kommennon uudelleen, mutta havaitsin että muutokseni eikä muuttunut sähköposti näy lokissa. Testasin luoda ja lisätä uuden tiedoston, ja ajaa tämän serverille.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/fb0ab6d4-64c5-48eb-baa8-ce87b9c56570)
+
+Nyt lokissa näkyivät päivityksetkin, joten saatoin unohtaa aiemmassa kohdassa ajaa päivitykset githubin serverille git pull & git pushilla.
+
+Lokissa näkyy ensimmäisenä uusimmat päivitykset. Author-kohdasta näkee päivittäjän nimen ja sähköpostiosoitteen, sekä päivän ja ajan jolloin muutos on tehty. Tämän alla näkyy commit message, gitin koodia, ja vihreällä näkyy tehty muutettu teksti.
+
+## Lähteet
+
+
 
 
 

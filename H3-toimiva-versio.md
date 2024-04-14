@@ -1,5 +1,6 @@
 ### a) Online. Tee uusi varasto GitHubiin (tai Gitlabiin tai mihin vain vastaavaan palveluun). Varaston nimessä ja lyhyessä kuvauksessa tulee olla sana "summer". Aiemmin tehty varasto ei kelpaa. 
  Luon uuden repositoryn GitHubiin graafisessa liittymässä, valitsen tälle nimen, lisään descriptionin ja readme.filen ja lisenssiksi GNU General Public License 3.
+ 
  ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/93ae00fa-1b92-4fd2-b49e-35c60120f979)
 
  ### b) Dolly. Kloonaa edellisessä kohdassa tehty uusi varasto itsellesi, tee muutoksia omalla koneella, puske ne palvelimelle, ja näytä, että ne ilmestyvät weppiliittymään.
@@ -13,6 +14,32 @@
 Aloitin tehtävän käynnistämällä virtuaalikoneen, Debianin, sillä totesin edellisellä oppitunnilla että Gitin käyttö on huomattavasti miellyttävämpää linuxilla kuin omalla windowsillani.
 Alkuun siirryin cd code-komennolla edellisellä oppitunnilla luomaani directoryyn code, josta käsin tein päivityksiä githubiin kloonatakseni edellisessä kohdassa tehdyn uuden varaston, Summerin, itselleni, komennolla git clone plus luomani repositoryn linkki.
 Tämä ei kuitenkaan toiminut, ja sain seuraavanlaisen virhe-ilmoituksen:
+
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/d9abda15-70c7-4a76-b2e3-8e1e521bc679)
 
 Tarkistin kansion sisällön, ja tajusin että tämä ei toiminut, koska olin linkittänyt edellisellä tunnilla vain erään toisen repositoryn tähän, ja tämä vaatii nyt uuden repositoryn siirron perusteellisemmin.
+Peruutin luomastani kansiosta kotihakemistoon, annoin komennon uudelleen, ja siirryin tiedostoon.
+Avazin micro-tekstinkäsittelyeditorilla tiedoston julkisen avaimen, joka on .pub-päätteinen, kopioin tämän, ja siirryin GitHubin graafiseen liittymään lisätäkseni avaimen sisällön sinne.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/253d96ee-734f-4b82-83ef-38e6e50122ef)
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/63a374a4-7fed-4aed-a338-e0c69e4f9c7f)
+
+
+Github herjasi että avain oli jo käytössä. Päädyin testaamaan alussa antamaani komentoa ssh clone kloonatakseni repositoryn uudestaan, ja nyt tällä kertaa tämä onnistuikin jostain tuntemattomasta syystä, ja Summer-reponi näkyykin terminaalin kautta.
+Tämä ssh-avainten kanssa säätäminen oli hyvää kertausta alkuasennuksista, vaikka nyt tällä kertaa olikin turhaa!
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/81c15b17-794c-4edd-ae13-5e945812bd06)
+
+Seuraavaksi loin directoryyn uuden tiedoston Testi.md , ja ajoin tämän Githubiin. Lisäsin commit-messagen, ja tarkistin GUI:sta että tämä näkyi myös siellä.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/132d75ed-6e1b-4404-aadb-269195dcd1f3)
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/871bb19b-fd7c-47a2-bdd4-b332e8db2caa)
+
+Kaikki toimi, eli sain kloonattua edellisessä tehtävässä luomani repositoryn(varaston) itselleni, tein muutoksia omalla tietokoneellani, puskin ne palvelimelleni ja näytin että ne ilmestyivät web-liittymään.
+
+
+
+
+

@@ -8,14 +8,17 @@ Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2
 
 ### Gitin käyttö on lähinnä 'git add . && git commit; git pull && git push'. Selitä tuon komennon jokainen osa. Käytä apuna itse valitsemiasi lähteitä ja viittaa niihin
 
-- Git add .  Lisää jotain Gitiin
-- Git Commit; Tallentaa työn anna commit-message
-- git pull: vetää gitin serveriltä uusimmat tiedot
-- git push: siirtää tiedot serverille
+- Git add .  lisää tiedostot gitin serverille
+- Git Commit; Tallentaa työn ja vaatii commit-messagen
+- git pull: päivittää gitin serveriltä uusimmat tiedot muokkauksista
+- git push: siirtää tiedot kaikista muokkauksista gitin serverille
 
-- && "If success, then continue". kaksi näitä peräkkäin tarkoittaa sitä, että mikäli käsky vasemmalla 
+- && "If success, then continue (Henry-Stocker 2023) " 
 
 ### Varaston terokarvinen/suolax/ historia, eli loki ja muutokset. Kätevimmin komentokehotteesta 'git clone https://github.com/terokarvinen/suolax.git; cd suolax/; git log --patch --color|less -R'. Wepistäkin saattaa onnistua kliksuttelemalla "Commits".
+- suolax on perustettu ke 10.4. klo 19.28, ja sinne on tehty yhteensä kahdeksan committia
+- Välillä on lisätty erinäistä tekstiä, ja poistettu joitain tekstejä
+- esim klo 19.29 on muokattu README.md:tä ja poistettu sana suolax ja lisätty sana Suolax isolla alkukirjaimella.
 
 
 ## a) Online. Tee uusi varasto GitHubiin (tai Gitlabiin tai mihin vain vastaavaan palveluun). Varaston nimessä ja lyhyessä kuvauksessa tulee olla sana "summer". Aiemmin tehty varasto ei kelpaa. 
@@ -157,6 +160,14 @@ Tästä näkyy että asentui uusia paketteja, jotkut olin tosin testimielessä j
 
 Chacon and Straub 2014: Pro Git, 2ed: 1.3 Getting Started - What is Git? Luettavissa:
 https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F Luettu 14.4.2024
+
+https://github.com/git-guides/git-add Luettu 14.4.2024
+
+https://github.com/git-guides/git-pull Luettu 14.4.2024
+
+https://github.com/git-guides/git-push Luettu 14.4.2024
+
+https://github.com/git-guides/git-commit Luettu 14.4.2024
 
 https://github.com/terokarvinen/suolax/blob/main/srv/salt/favourites/init.sls Luettu: 14.4.2024
 

@@ -39,6 +39,23 @@ Seuraavaksi loin directoryyn uuden tiedoston Testi.md , ja ajoin tämän Githubi
 
 Kaikki toimi, eli sain kloonattua edellisessä tehtävässä luomani repositoryn(varaston) itselleni, tein muutoksia omalla tietokoneellani, puskin ne palvelimelleni ja näytin että ne ilmestyivät web-liittymään.
 
+### c) Doh! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
+
+    git add
+    git reset --hard
+    
+Oletan tyhmän muutoksen tarkoittavan esim jotain tiedostoa, mitä ei ollut tarkoittanut laittaa julkiseksi, joten luon uuden tiedoston testirepositoryyn, lisään tämän gitiin git add-komennolla,  jonka poistankin ennen kuin ajan näitä GitHubiin. 
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/28ab002f-2b33-4b49-930b-2e9a3664ef8f)
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/05f5e549-0e39-488e-b3aa-4651a171d625)
+
+Varmistan vielä että poistuihan väärä tiedostoni; poistui.
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/d6e97f0d-faf9-48c3-bf05-e70f798d6aed)
+
+
+
+
 
 
 

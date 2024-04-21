@@ -5,7 +5,6 @@ Harjoituksen tehtävänannot löytyy osoitteesta https://terokarvinen.com/2024/c
 ## X, Lue ja tiivistä
 ### Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves, kohdat :
 ### -Infra as Code - Your wishes as a text file
-
 ### -top.sls - What Slave Runs What States
 
 Infraa koodina tarkoittaa yksinkertaisimmillaan sitä, että kirjoitetaan toive tavoitetilasta tekstitiedoksi, ja ajetaan se. Tässä kielenä on YAML, jossa on tärkeää käyttää sisennyksissä kahta välilyöntiä, jotta kongifuraatiotiedostot toimivat. 
@@ -15,6 +14,14 @@ Top.sls-tiedostossa on pääasetukset ja tieto siitä, mitä tiloja mikäkin orj
 ### -Rules of YAML
 ### -YAML simple structure
 ### -Lists and dictionaries - YAML block structures
+
+YAML on markup-kieli, joka yhdistää  YAMLin data structuren Pythonin datastructureen Saltia varten. 
+
+YAMLin muutami erityispiirteitä on:
+- data on muotoiltu?(structured) key:value pareissa
+- kirjainkoolla on väliä
+- tabia ei saa käyttää, vain välilyönnit sallitaan
+- kommentit risuaidalla # 
 
 ## Karvinen 2018: Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port
 
@@ -39,6 +46,28 @@ Kävin tarkastamassa, että se loi mitä pitikin.
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/196782e0-233a-4e30-8337-a1b782211bb2)
 
 ## b) Top. Tee top.sls niin, että useita valitsemiasi tiloja ajetaan automaattisesti, esim komennolla "sudo salt '*' state.apply" tai "sudo salt-call --local state.apply".
+
+Aloitin siirtymällä /srv/salt, ja loin sinne top.sls-tiedoston seuraavilla tiedoilla:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/6404ad3a-f4a0-43c3-808d-aad1899c333f)
+
+Hello on edellisessä tehtävässä luomani moduuli, ja teen vielä toisen, favourites-moduulin jolla asensin erinäisiä ohjelmia.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/36563782-93c3-4da2-9989-57b5cb50724a)
+
+Sitten yritin ajaa tätä ao. komennolla, mutta virheitä tuli:
+
+    sudo salt-call --local state.apply
+
+    ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/5fed0b80-2c51-4550-9842-3d57a07fd24e)
+
+top.sls-tiedostossani näytti olevan virhe, muokkasin hieman sisennyksiä ja uusi yritys.
+
+Se ei kuitenkaan auttanut, nyt kävin muokkaamassa hello-moduuliani johon olin lisännyt ylimääräistä materiaalia, ja sain lopulta jonkin tuloksen, en tosin aivan sitä minkä halusin.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/3984eaf2-f717-4903-97a3-ce4dde9d28dc)
+
+Seuraavaksi kävin muokkaamassa favourites-moduulin sisältöä, mutta ei tämä nyt toiminut aivan niinkuin ajattelin.
 
 ## c) Apache easy mode. Asenna Apache, korvaa sen testisivu ja varmista, että demoni käynnistyy.
 
@@ -95,16 +124,12 @@ Kävin muokkaamassa sites-availablessa polkua, josta tämä haki index-sivuston.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/77a59603-3cc5-4898-8da1-1266eadcaee8)
 
-Ei auttanut vieläkään. 
+Ei auttanut vieläkään. Uusi yritys myöhemmin.
 
 
 
 
 
-
-
- 
-  
 ## d) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
 
 

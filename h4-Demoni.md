@@ -136,12 +136,15 @@ Ei auttanut vieläkään. Uusi yritys myöhemmin.
 ## Lähteet
 
 Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves. Luettavissa:
+
 https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file. Luettu 21.4.2024
 
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml Luettu: 21.4.2024
 
 Karvinen 2024: Configuration Management 2024 Spring. Luettavissa:
+
 https://terokarvinen.com/2024/configuration-management-2024-spring/ Luettu: 21.4.2024
 
 Karvinen 2018: Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port. Luettavissa:
+
 https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh. Luettu 21.4.2024

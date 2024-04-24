@@ -1,4 +1,4 @@
-Ao. vastausket ovat osa kurssitehtävää H4 DemoniHaaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen.
+Ao. vastaukset ovat osa kurssitehtävää H4 DemoniHaaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen.
 Tein harjoituksia 21.4.kotona omalla tietokoneella Lenovo Yoga Slim 7 14ARE05. Hyödynsin tehtävissä virtuaalikonetta(Debian 12 bookworm) ja Virtualbox-alustaa.
 Harjoituksen tehtävänannot löytyy osoitteesta https://terokarvinen.com/2024/configuration-management-2024-spring/.
 

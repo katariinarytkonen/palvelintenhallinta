@@ -45,12 +45,11 @@ Tässä kohtaa piti etsiä netistä Windowsin Temp-tiedostojen polku, sillä tä
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/9ddad7bc-9d80-4029-b1c4-935dbc7064ef)
 
-     salt-call --local state.single file.managed C:\WINDOWS\Temp/hellokatariina
+    salt-call --local state.single file.managed C:\WINDOWS\Temp/hellokatariina
 
 Ensiksi tällä löytyi jo oppitunnilla luomani tiedosto, joten annoin vielä hieman erilaisen komennon(hellokatariina1) jotta näkyi myös jotain muuttuneen:
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/8edea25d-1e98-4fb1-b1b1-eaabcadddcc1)
-
 
 
 ### d) CSI Kerava. Näytä 'find' avulla viimeisimmäksi muokatut tiedostot /etc/-hakemistosta ja kotihakemistostasi. Selitä kaikki käyttämäsi parametrit ja format string 'man find' avulla.

@@ -54,8 +54,57 @@ Ensiksi tällä löytyi jo oppitunnilla luomani tiedosto, joten annoin vielä hi
 
 ### d) CSI Kerava. Näytä 'find' avulla viimeisimmäksi muokatut tiedostot /etc/-hakemistosta ja kotihakemistostasi. Selitä kaikki käyttämäsi parametrit ja format string 'man find' avulla.
 
+Tässä kohtaa käynnistin virtuaalikoneen vagrant upilla, ja otin siihen ssh-yhteyden tehtävän tekoa varten, vagrant ssh. Aloin tutkimaan find-komennon manuaalia 
+    find man
+Tämähän oli manuaalien tapaan aika valtava sisällöltään. Kurssin tehtäväsivulta löytyykin onneksi vinkki komennosta, jolla sain halutun tiedon ulos.
+
+    find -printf '%T+ %p\n'|sort
+
+Tässä find on komento, -printf tekee kommenosta tulosteen, %T+ saa näkyviin muokkausajan, %p tiedoston nimi, sort järjestää tulosteen halutusti ja /n on rivinvaihto.
+
+Siirryin /etc/-hakemistoon, ja annoin komennon, josta sain ao. tulosteen:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1f64d801-1867-4739-8f8d-5e6739a0b8b4)
+
+Vaihdoin kotihakemistoon, cd ~,  ja annoin komennon uudelleen:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/019468ef-b823-43ee-a205-91f81d30c798)
+
 
 ### e) Komennus. Tee Salt-tila, joka asentaa järjestelmään uuden komennon.
+
+Tässä aloitin uuden komennon lisäämisestä koneelle, jotta myöhemmin voin tehdä Salt-tilan. Loin skriptin moi.sh menemällä micro-tekstieditoriin, ja lisäämälle sinne skriptin
+
+    micro moi.sh
+   
+    #!/usr/bin/bash
+    echo "Moi!"
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7949d07f-10f1-4656-9e3e-3bb6f4ab9f8b)
+
+Annoin skriptille suoritusoikeudet chmod komennolla, ja ajoin sen nähdäkseni toimiiko odotetusti.
+
+    chmod ugo+x moi.sh
+    ./moi.sh
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7e13daa8-c3b2-4b51-a4a1-c60ad378cd79)
+
+Skripti toimi tässä. Seuraavaksi skripti piti siirtää /usr/local/bin-hakemistoon. Tein tämän cp-komennolla, johon vaadittiin sudo-oikeudet.
+
+    sudo cp moi.sh /usr/local/bin
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/958157fe-1f69-4b98-b003-b575745f03ab)
+
+Testasin vielä että skripti toimi myös /usr/local/bin-tehtävässä ja ilman polkua.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/8037ad94-f284-4028-817c-3b4436d542ab)
+
+Tämä toimi. Seuraavaksi tästä täytyi saada Salt-tila. Siirryin /srv/salt-kansioon, jossa Salt-tilat ovat, ja tein uuden directoryn moi.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/2252c275-8c97-40ab-881f-59d6055477d4)
+
+
+
 
 ### Lähteet:
 

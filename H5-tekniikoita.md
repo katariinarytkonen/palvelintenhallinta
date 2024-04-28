@@ -106,9 +106,24 @@ Tämä toimi. Seuraavaksi tästä täytyi saada Salt-tila. Siirryin /srv/salt-ka
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/2252c275-8c97-40ab-881f-59d6055477d4)
 
+Tässä kohtaa jäin jumiin ja yritin löytää googlesta apua, ja lopulta päädyin toisen opiskelijan kotitehtäväraporttiin (https://github.com/juliusjantti/palvelinten_hallinta_kurssi/blob/main/h5_CSI-kerava.md ), josta sain apua. 
 
+Tästä näin, että minun täytyi luoda init.sls-tiedosto seuraavanlaisella sisällöllä tuohon /srv/salt-kansioon:
 
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/ffe19a54-89b4-4a04-9ee7-90ae62975643)
 
+Sitten täytyi luoda oikea skripti micro moi.sh, johon tuli ao. sisältö:
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/52c44013-55e0-455c-bd9d-dacd2bdd586d)
+
+Ajoin komennon, , ja tämä näytti toimineen.
+
+     sudo salt-call –local state.apply moi
+
+    
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/59bb21e0-8eb4-4d41-89cb-e82371b0fe43)
+
+     
 
 
 ### Lähteet:
@@ -118,8 +133,14 @@ https://stackoverflow.com/questions/1078920/equivalent-of-more-or-less-command-i
 https://learn.microsoft.com/en-us/answers/questions/1142543/is-it-safe-to-delete-temp-files-under-c-windowstem Luettu 28.4 
 
 Karvinen 2024, Configuration Management 2024 spring. Luettavissa: 
+
 https://terokarvinen.com/2024/configuration-management-2024-spring/ Luettu 26.4.2024
 
 Seppä 2019, H5. Luettavissa:
+
 https://salthomework.wordpress.com/h5/ Luettu 28.4.2024
+
+Jäntti 2023, h5 CSI kerava. Luettavissa:
+
+https://github.com/juliusjantti/palvelinten_hallinta_kurssi/blob/main/h5_CSI-kerava.md Luettu 28.4.2024
 

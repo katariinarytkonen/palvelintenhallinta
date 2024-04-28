@@ -1,3 +1,7 @@
+Ao. vastaukset ovat osa kotitehtävää 5 Tekniikoita Haaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen. Tein harjoituksia 26.4. ja 28.4. kotona omalla tietokoneella Lenovo Yoga Slim 7 14ARE05. Hyödynsin osassa tehtäviä myös  virtuaalikonetta(Debian 12 bookworm) ja Virtualbox-alustaa. 
+
+Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2024/configuration-management-2024-spring/
+
 ### x) Lue ja tiivistä: Vapaavalintainen aiemman vuoden kotitehtäväraportti Saltin käytöstä Windowsilla. Löydät raportteja esimerkiksi Google tai Duck-haulla: salt windows karvinen.
 
 Löysin vuoden 2019 raportin, jossa silloinen opiskelija Toni Seppä oli kuvannut kotitehtäväraportissaan Saltin käyttöä Windowsilla (https://salthomework.wordpress.com/h5/) . 

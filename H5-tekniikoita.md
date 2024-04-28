@@ -1,5 +1,8 @@
 ### x) Lue ja tiivistä: Vapaavalintainen aiemman vuoden kotitehtäväraportti Saltin käytöstä Windowsilla. Löydät raportteja esimerkiksi Google tai Duck-haulla: salt windows karvinen.
 
+Löysin vuoden 2019 raportin, jossa silloinen opiskelija Toni Seppä oli kuvannut kotitehtäväraportissaan Saltin käyttöä Windowsilla (https://salthomework.wordpress.com/h5/) . 
+Hän oli testannut Windows-ympäristössäni Saltia ping-komennolla(./salt-call –local test.ping) ja käyttänyt myös komentoa ” salt-call –local system.set_computer_desc ‘tämä on uusi salt-minion windows 10 orja’ jolla oli muuttanut tietokoneen kuvausta tekstiä vastaavaksi. 
+
 ### a) Asenna Salt Windowsille tai Macille. Osoita 'salt-call --local' komentoa ajamalla, että asennus on onnistunut. (Jos olet asentanut jo aiemmin, tässä riittää pelkkä asennuksen testaaminen, eikä asennusta tarvitse tehdä uudelleen.)
 
     salt-call --local
@@ -106,5 +109,17 @@ Tämä toimi. Seuraavaksi tästä täytyi saada Salt-tila. Siirryin /srv/salt-ka
 
 
 
+
+
 ### Lähteet:
+
+https://stackoverflow.com/questions/1078920/equivalent-of-more-or-less-command-in-powershell Luettu 26.4.2024
+
+https://learn.microsoft.com/en-us/answers/questions/1142543/is-it-safe-to-delete-temp-files-under-c-windowstem Luettu 28.4 
+
+Karvinen 2024, Configuration Management 2024 spring. Luettavissa: 
+https://terokarvinen.com/2024/configuration-management-2024-spring/ Luettu 26.4.2024
+
+Seppä 2019, H5. Luettavissa:
+https://salthomework.wordpress.com/h5/ Luettu 28.4.2024
 

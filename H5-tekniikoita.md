@@ -102,7 +102,7 @@ Skripti toimi tässä. Seuraavaksi skripti piti siirtää /usr/local/bin-hakemis
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/958157fe-1f69-4b98-b003-b575745f03ab)
 
-Testasin vielä että skripti toimi myös /usr/local/bin-tehtävässä ja ilman polkua.
+Testasin vielä että skripti toimi myös /usr/local/bin ja ilman polkua.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/8037ad94-f284-4028-817c-3b4436d542ab)
 

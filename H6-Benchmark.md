@@ -84,8 +84,8 @@ Päädyin valitsemaan testiini Lasse Kiljusen Snake-pelin asennuksen, sillä pel
 
 ### d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. 
 
-1. Moduuli, joka asentaa peruskonfiguroinnit uuteen koneeseen.
-2. Moduuli, joka
+1. Moduuli, joka asentaa jotkut tietyt peruskonfiguroinnit uuteen koneeseen.
+2. Moduuli, joka asentaa kahdelle virtuaalikoneelle tietyt ohjelmat(esim micro ja apache
 3.
 4.
 5.
@@ -98,9 +98,11 @@ https://docs.saltproject.io/en/latest/topics/windows/windows-package-manager.htm
 https://fi.wikipedia.org/wiki/Inkscape Luettu 5.5.2024 
 
 Gratschew, 2020. Palvelinten hallinta ICT4TN022-3005 Harjoitus 7. Luettavissa: 
+
 https://tgratschew.news.blog/2020/05/18/palvelinten-hallinta-ict4tn022-3005-harjoitus-7/ Luettu 5.5.2024
 
 Karvonen 2020. Palvelinten Hallinta Joona Karvonen Harjoitus 7. Luettavissa:
+
 https://joonakarvonen.design.blog/palvelinten-hallinta-joona-karvonen-harjoitus-7/ Luettu 5.5.2024.
 
 https://github.com/Eetu95/salt Luettu 5.5.2024
@@ -108,7 +110,9 @@ https://github.com/Eetu95/salt Luettu 5.5.2024
 https://www.gnu.org/licenses/quick-guide-gplv3.html Luettu 5.5.2024
 
 Vaarala 2017. Oma Puppet Moduuli. Luettavissa:
+
 https://konstavaarala.wordpress.com/2017/05/11/oma-puppet-moduuli/ Luettu 5.5.2024
 
 Toivanen, 2020. Palvelinten hallinta – h7. Luettavissa:
+
 https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ Luettu 5.5.2024

@@ -1,3 +1,6 @@
+Ao. vastaukset ovat osa kotitehtävää 5 Tekniikoita Haaga-Helian Palvelinten Hallinta-kurssilla, jota opettaa Tero Karvinen. Harjoituksia on tehty 5.5.2024.
+Harjoituksen tehtävänannot löytyvät osoitteesta : https://terokarvinen.com/2024/configuration-management-2024-spring/
+
 ### x) Lue ja tiivistä. (Tässä x-alakohdassa ei tarvitse tehdä testejä tietokoneella, vain lukeminen tai kuunteleminen ja tiivistelmä riittää. Tiivistämiseen riittää muutama ranskalainen viiva.)Windows Package Manager: Introduction, Install libraries, Populate the local Git repository, Update minion database, Install software package, Usage osa. Eli sivun alusta kappaleen "Remove a package" loppuun, poislukien "Configuration". (Kannatta soveltaa asennuksesta idempotentti versio, ulkomuistista: 'sudo salt-call --local -l info state.apply pkg.installed curl').
 
 - Windows Package Managerilla saa Salt-tilalla Linuxista tutun paketinhallinnan myös Windowsille. Tällä tavoin saa helposti ja nopeasti asennettua, päivitettyä ja poistettua ohjelmia.
@@ -10,7 +13,7 @@
 
 ### a) Paketti Windowsia. Asenna Windowsiin tai Macciin ohjelmia Saltin pkg.installed -funktiolla. (Jos teit tarvittavat asennukset jo tunnilla, voit kirjoittaa ympäristön asennuksen ulkomuistista, ja asentaa nyt vain jonkin uuden paketin. Muistinvaraisesti kirjoitetut muistiinpanot ovat paljon epämääräisempiä kuin työn aikana kirjoitetut, joten merkitse selvästi, mitkä osat on kirjoitettu ulkomuistista ja mitkä työskennellessä.)
 
-Olin tehnyt tarvittavat asennukset jo tunnilla, mutta kirjasin ylläolevaan lue ja tiivistä tehtävään olennaiset komennot, joilla ympäristö asennetaan itsenäiselle koneelle, jolla ei ole masteria.
+Olin tehnyt tarvittavat asennukset jo tunnilla, mutta kirjasin ylläolevaan lue ja tiivistä tehtävään olennaiset komennot, joilla ympäristö asennetaan itsenäiselle koneelle, jolla ei ole masteria. Alkuun tein /srv/salt/win-directoryn, jossa ao. käskyt annettiin: 
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/fd1fbe31-a448-47c0-ba9d-9449dfb13909).
 
@@ -29,6 +32,8 @@ Testasin että ohjelma aukeni myös ihan käyttöjärjestelmässä, ja lopuksi p
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/060628df-403a-406e-a2c8-548564e4eef9)
 
      salt-call --local pkg.removed "inkscape"
+
+Tuolla oli listattuna myös ccleaner, jonka asensin, mutta ohjelma herjasi että oli joku vanha versio kun käynnistin sen. Jouduin päivittämään tämän manuaalisesti.
 
 
 
@@ -88,7 +93,7 @@ Toimin ohjeiden mukaan ja loin uuden nsnake-directoryn, johon tein init.sls -tie
 
 Yritin ajaa sitä sudo salt '*' state.apply nsnake -komennolla, mutta ei toiminut. Salt kuitenkin näytti toimivan, kun testasin sen toimintaa salt-callilla.
 
-
+Testasin myös sudo salt-call --local state.apply nsnake-komentoa, mutta ei tämäkään toiminut.
 
 
 ### d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. 

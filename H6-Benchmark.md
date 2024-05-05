@@ -66,15 +66,16 @@ Tässä kiinnosti tuo aihe, kukapa nyt ei kaipaa hauskoja pelejä koneelleen, ja
 
 5. https://konstavaarala.wordpress.com/2017/05/11/oma-puppet-moduuli/
 
-Projektin tarkoituksena oli tehdä Puppet-moduuli, joka asentaa selaimen(Chrome) ja vaihtaa työpöydän taustakuvan.
-
-Tässä kiinnostavaa oli se, että tässä oli käytetty Saltin sijasta Puppetia, joka on itselleni täysin vieras ohjelma. 
+Projektin tarkoituksena oli tehdä Puppet-moduuli, joka asentaa selaimen(Chrome) ja vaihtaa työpöydän taustakuvan. 
+Lisenssistä ei mainintaa. Tekijä on Konsta Vaarala, vuosi 2017.
+Riippuvuudet: tässä käytettiin Linuxia livetikulta, käyttöjärjestelmänä Xubuntu 16.04 LTS amd64.
+Tässä kiinnostavaa oli se, että tässä oli käytetty Saltin sijasta Puppetia, joka on itselleni täysin vieras ohjelma.
 
 6. https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/
 
 Projektin tarkoituksena oli tehdä oma master-kone, jonka avulla voisi hallita minioneita, joille tulisi olla asennettuna Steam ja Discord.
 Lisenssistä ei mainintaa. Tekijä on Otto Toivanen, vuosi 2020.
-Riippuvuudet:
+Riippuvuudet: Virtualbox, jossa oli tehtynä master-kone ja 2 minionia.
 
 
 ### c) Testbench. Aja toisen tekemä tila.
@@ -85,9 +86,7 @@ Toimin ohjeiden mukaan ja loin uuden nsnake-directoryn, johon tein init.sls -tie
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/b78203a9-4c7f-4640-b184-e467e4db076f)
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/97791d81-7443-465b-95f2-f207932733f1)
 
-Yritin ajaa sitä sudo salt '*' state.apply nsnake -komennolla, mutta ei toiminut. Salt kuitenkin näytti toimivan, joten siirryin testaamaan jotain muuta moduulia.
-
-
+Yritin ajaa sitä sudo salt '*' state.apply nsnake -komennolla, mutta ei toiminut. Salt kuitenkin näytti toimivan, kun testasin sen toimintaa salt-callilla.
 
 
 
@@ -95,9 +94,9 @@ Yritin ajaa sitä sudo salt '*' state.apply nsnake -komennolla, mutta ei toiminu
 ### d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. 
 
 1. Moduuli, joka asentaa jotkut tietyt peruskonfiguroinnit uuteen koneeseen.
-2. Moduuli, joka asentaa kahdelle virtuaalikoneelle tietyt ohjelmat(esim micro ja apache
-3. Moduuli, jolla asentaa uuden 
-4.
+2. Moduuli, joka asentaa kahdelle virtuaalikoneelle tietyt ohjelmat(esim micro ja apache, git ja curl, tms)
+3. Moduuli, jolla asentaa uuden palvelimen 
+4. 
 5.
 
 

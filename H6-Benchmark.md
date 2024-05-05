@@ -4,13 +4,60 @@
 - Jotta tämä toimii, täytyy Git olla asennettuna koneella, sillä tämä hakee windows-paketit git-repositorysta
 - $ salt-call --local winrepo.update_git_repos
 - $ salt-call --local pkg.refresh_db
-- $ salt-call --local pkg.install "firefox_x64
+- $ salt-call --local pkg.install "firefox_x64"
 
 
 
 ### a) Paketti Windowsia. Asenna Windowsiin tai Macciin ohjelmia Saltin pkg.installed -funktiolla. (Jos teit tarvittavat asennukset jo tunnilla, voit kirjoittaa ympäristön asennuksen ulkomuistista, ja asentaa nyt vain jonkin uuden paketin. Muistinvaraisesti kirjoitetut muistiinpanot ovat paljon epämääräisempiä kuin työn aikana kirjoitetut, joten merkitse selvästi, mitkä osat on kirjoitettu ulkomuistista ja mitkä työskennellessä.)
 
+Olin tehnyt tarvittavat asennukset jo tunnilla, mutta kirjasin ylläolevaan lue ja tiivistä tehtävään olennaiset komennot, joilla ympäristö asennetaan itsenäiselle koneelle, jolla ei ole masteria.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/fd1fbe31-a448-47c0-ba9d-9449dfb13909).
+
+Täältä näkee mitä ohjelmia ylipäätään oli mahdollista asentaa Saltiin tuolla pkg.installed -funktiolla:
+
+https://github.com/saltstack/salt-winrepo-ng 
+
+Testasin paketinhallinnan toimivuutta asentamalla uuden ohjelman, inkscapen. Inkscape on ohjelmisto, jolla voi tuottaa vektorigrafiikkaa. Asennus seuraavalla komennolla:
+
+     salt-call --local pkg.install "inkscape"
+
+Testasin että ohjelma aukeni myös ihan käyttöjärjestelmässä, ja lopuksi poistin tämän itselleni turhana.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/779833f9-9d62-45df-b711-6917b1faa69b)
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/060628df-403a-406e-a2c8-548564e4eef9)
+
+     salt-call --local pkg.removed "inkscape"
+
+
+
 ### b) Benchmark. Etsi 3-7 keskitetyn hallinnan projektia, esimerkiksi tämän kurssin "Oma moduli" lopputyötä. Työn tulee olla modernia keskitettyä hallintaa (idempotentti, infra koodina, yksi totuus). Esimerkiksi pelkkä shell script ei kelpaa. Työ saa käyttää mitä vain työkalua, esim Salt, Puppet, Ansible, Chef, Conftero, CFEngine. Tässä alakohdassa ei tehdä mitään testejä, vaan arvioidaan töitä vain niiden kotisivujen perusteella. Etsimiseen voit käyttää hakukoneita.
+
+1. https://tgratschew.news.blog/2020/05/18/palvelinten-hallinta-ict4tn022-3005-harjoitus-7/
+
+Projektin tarkoitus oli tehdä oma livemoduuli, joka konfiguroi palomuurin, ssh-yhteyden ja apachen minioneille. Lisenssistä ei ole sivulla missään mainintaa. Tekijä Tommy Gratschew, vuosi 2020. 
+Riippuvuuksina on listattu Oracle VirtualBox 6.1.6 ja Xubuntu 18.04.03 LTS (+ VirtualBox guest additions).
+Tässä kiinnostavaa oli __  
+
+2. https://joonakarvonen.design.blog/palvelinten-hallinta-joona-karvonen-harjoitus-7/
+
+Projektin tarkoitus oli asentaa Saltilla Minecraft-palvelin orjakoneelle, joka toimii lähiverkossa. Tämä oli kirjoittajan mukaan hyödyllinen esim Lan-tapahtumissa, jotta useampi pelaaja voi liittyä pelaamaan yhdessä peliä samalle palvelimelle.
+Lisenssistä ei ole mainintaa. Tekijä on Joona Karvonen, vuosi 2020.
+Riippuvuus: erillinen pöytäkone, käyttöjärjestelmänä Ubuntu 18.04.
+Tässä kiinnostavaa oli se, että tekijä oli tehnyt moduulin aidosti omaan tarpeeseensa, ja luonut samalla omien sanojensa mukaisesti jotain täysin jotain uutta, sillä hän veikkasi että kukaan ei ole aiemmin asentanut Saltilla minecraft-palvelinta. 
+
+3. https://github.com/Eetu95/salt
+   
+Projektin tarkoituksena oli tehdä SaltStack-miniprojekti, joka asensi VirtualBoxin Linuxille ja että sitä pystyi käyttää selaimessa.
+Lisenssinä oli GNU GPL versio 2. tai uudempi. Linsenssin tiedot lukevat projektin lopussa, sekä GITissä ylempänä: ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1e7ead4b-9650-45d9-90b8-e6705855f616)
+
+Linsenssi tarkoittaa:
+Projektin tekijä on ollut Eetu95, koko nimeä ei ole näkyvillä hänen Githubissa. Projekti on vuodelta 2018.
+Riippuvuudet:
+Tässä kiinnostavaa oli mahdollisuus käyttää ohjelmaa selaimessa.
+
+
 
 ### c) Testbench. Aja toisen tekemä tila.
 
@@ -19,3 +66,13 @@
 ### Lähteet:
 
 https://docs.saltproject.io/en/latest/topics/windows/windows-package-manager.html Luettu 5.5.2024
+
+https://fi.wikipedia.org/wiki/Inkscape 
+
+Gratschew, 2020. 
+https://tgratschew.news.blog/2020/05/18/palvelinten-hallinta-ict4tn022-3005-harjoitus-7/
+
+Karvonen 2020. Palvelinten Hallinta Joona Karvonen Harjoitus 7. Luettavissa:
+https://joonakarvonen.design.blog/palvelinten-hallinta-joona-karvonen-harjoitus-7/ Luettu 5.5.2024.
+
+https://github.com/Eetu95/salt

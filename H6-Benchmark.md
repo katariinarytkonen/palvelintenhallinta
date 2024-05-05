@@ -49,19 +49,47 @@ Tässä kiinnostavaa oli se, että tekijä oli tehnyt moduulin aidosti omaan tar
 
 3. https://github.com/Eetu95/salt
    
-Projektin tarkoituksena oli tehdä SaltStack-miniprojekti, joka asensi VirtualBoxin Linuxille ja että sitä pystyi käyttää selaimessa.
+Projektin tarkoituksena oli tehdä SaltStack-miniprojekti, joka asensi VirtualBoxin Linuxille ja että sitä pystyi käyttää selaimessa(phpVirtualBox).
 Lisenssinä oli GNU GPL versio 2. tai uudempi. Linsenssin tiedot lukevat projektin lopussa, sekä GITissä ylempänä: ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1e7ead4b-9650-45d9-90b8-e6705855f616)
 
-Linsenssi tarkoittaa:
+Linsenssi tarkoittaa
 Projektin tekijä on ollut Eetu95, koko nimeä ei ole näkyvillä hänen Githubissa. Projekti on vuodelta 2018.
-Riippuvuudet:
+Riippuvuudet: Virtualbox VM-ympäristö, siihen asennettu Linux Xubuntu 18.04 Desktop AMD64 sekä Linux Ubuntu Server 16.04.5 LTS 64-bit virtuaalikoneet.
 Tässä kiinnostavaa oli mahdollisuus käyttää ohjelmaa selaimessa.
+
+4. https://lassekiljunen.wordpress.com/harjoitus-7/
+
+Projektin tarkoituksena oli asentaa ja konfiguroida Nsnake-peli kahdelle eri koneelle ja toimia viihdykkeenä esim kahvitauolla.
+Linsenssistä ei ole mainintaa. Tekijä on Lasse Kiljunen, vuosi 2020.
+Riippuvuudet:
+
+5. https://konstavaarala.wordpress.com/2017/05/11/oma-puppet-moduuli/
+
+Projektin tarkoituksena oli tehdä Puppet-moduuli, joka asentaa selaimen(Chrome) ja vaihtaa työpöydän taustakuvan.
+
+
+6. https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/
+
+Projektin tarkoituksena oli tehdä oma master-kone, jonka avulla voisi hallita minioneita, joille tulisi olla asennettuna Steam ja Discord.
+Lisenssistä ei mainintaa. Tekijä on Otto Toivanen, vuosi 2020.
+Riippuvuudet: Virtualbox
 
 
 
 ### c) Testbench. Aja toisen tekemä tila.
 
+Päädyin valitsemaan testiini Lasse Kiljusen Snake-pelin asennuksen, sillä peli vaikutti hauskalta.
+
+
+
 ### d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. Kunkin idean kuvaukseen riittää yksi virke. 
+
+1. Moduuli, joka asentaa peruskonfiguroinnit uuteen koneeseen.
+2.
+3.
+4.
+5.
+
 
 ### Lähteet:
 
@@ -76,3 +104,11 @@ Karvonen 2020. Palvelinten Hallinta Joona Karvonen Harjoitus 7. Luettavissa:
 https://joonakarvonen.design.blog/palvelinten-hallinta-joona-karvonen-harjoitus-7/ Luettu 5.5.2024.
 
 https://github.com/Eetu95/salt
+
+https://www.gnu.org/licenses/quick-guide-gplv3.html
+
+Vaarala 2017. Oma Puppet Moduuli. Luettavissa:
+https://konstavaarala.wordpress.com/2017/05/11/oma-puppet-moduuli/ Luettu 5.5.2024
+
+Toivanen, 2020. Palvelinten hallinta – h7. Luettavissa:
+https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ Luettu 5.5.2024

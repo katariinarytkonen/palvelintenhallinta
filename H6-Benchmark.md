@@ -38,22 +38,22 @@ Testasin että ohjelma aukeni myös ihan käyttöjärjestelmässä, ja lopuksi p
 
 Projektin tarkoitus oli tehdä oma livemoduuli, joka konfiguroi palomuurin, ssh-yhteyden ja apachen minioneille. Lisenssistä ei ole sivulla missään mainintaa. Tekijä Tommy Gratschew, vuosi 2020. 
 Riippuvuuksina on listattu Oracle VirtualBox 6.1.6 ja Xubuntu 18.04.03 LTS (+ VirtualBox guest additions).
-Tässä kiinnostavaa oli __  
+Tässä kiinnostavaa oli se, että moduulilla asennettiin ja konffattiin tärkeitä ja olennaisia perusjuttuja koneelle.  
 
 2. https://joonakarvonen.design.blog/palvelinten-hallinta-joona-karvonen-harjoitus-7/
 
 Projektin tarkoitus oli asentaa Saltilla Minecraft-palvelin orjakoneelle, joka toimii lähiverkossa. Tämä oli kirjoittajan mukaan hyödyllinen esim Lan-tapahtumissa, jotta useampi pelaaja voi liittyä pelaamaan yhdessä peliä samalle palvelimelle.
 Lisenssistä ei ole mainintaa. Tekijä on Joona Karvonen, vuosi 2020.
 Riippuvuus: erillinen pöytäkone, käyttöjärjestelmänä Ubuntu 18.04.
-Tässä kiinnostavaa oli se, että tekijä oli tehnyt moduulin aidosti omaan tarpeeseensa, ja luonut samalla omien sanojensa mukaisesti jotain täysin jotain uutta, sillä hän veikkasi että kukaan ei ole aiemmin asentanut Saltilla minecraft-palvelinta. 
+Tässä kiinnostavaa ja hienoa oli se, että tekijä oli tehnyt moduulin aidosti omaan tarpeeseensa, ja luonut samalla omien sanojensa mukaisesti jotain täysin jotain uutta, sillä hän veikkasi että kukaan ei ole aiemmin asentanut Saltilla minecraft-palvelinta. 
 
 3. https://github.com/Eetu95/salt
    
 Projektin tarkoituksena oli tehdä SaltStack-miniprojekti, joka asensi VirtualBoxin Linuxille ja että sitä pystyi käyttää selaimessa(phpVirtualBox).
 Lisenssinä oli GNU GPL versio 2. tai uudempi. Linsenssin tiedot lukevat projektin lopussa, sekä GITissä ylempänä: ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1e7ead4b-9650-45d9-90b8-e6705855f616)
 
-Linsenssi tarkoittaa
-Projektin tekijä on ollut Eetu95, koko nimeä ei ole näkyvillä hänen Githubissa. Projekti on vuodelta 2018.
+Linsenssi antaa kenelle tahansa oikeuden käyttää, kopioida, muuttaa ja jakaa edelleen ohjelmia ja niiden lähdekoodia. 
+Projektin tekijä on ollut Eetu95, koko nimeä ei ole näkyvillä hänen Githubissa, joten voi vain arvailla. Projekti on vuodelta 2018.
 Riippuvuudet: Virtualbox VM-ympäristö, siihen asennettu Linux Xubuntu 18.04 Desktop AMD64 sekä Linux Ubuntu Server 16.04.5 LTS 64-bit virtuaalikoneet.
 Tässä kiinnostavaa oli mahdollisuus käyttää ohjelmaa selaimessa.
 
@@ -61,24 +61,34 @@ Tässä kiinnostavaa oli mahdollisuus käyttää ohjelmaa selaimessa.
 
 Projektin tarkoituksena oli asentaa ja konfiguroida Nsnake-peli kahdelle eri koneelle ja toimia viihdykkeenä esim kahvitauolla.
 Linsenssistä ei ole mainintaa. Tekijä on Lasse Kiljunen, vuosi 2020.
-Riippuvuudet:
+Riippuvuudet: Virtualbox ja joku linuxilla pyörivä virtuaalikone.
+Tässä kiinnosti tuo aihe, kukapa nyt ei kaipaa hauskoja pelejä koneelleen, ja matopeli on klassikko.
 
 5. https://konstavaarala.wordpress.com/2017/05/11/oma-puppet-moduuli/
 
 Projektin tarkoituksena oli tehdä Puppet-moduuli, joka asentaa selaimen(Chrome) ja vaihtaa työpöydän taustakuvan.
 
+Tässä kiinnostavaa oli se, että tässä oli käytetty Saltin sijasta Puppetia, joka on itselleni täysin vieras ohjelma. 
 
 6. https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/
 
 Projektin tarkoituksena oli tehdä oma master-kone, jonka avulla voisi hallita minioneita, joille tulisi olla asennettuna Steam ja Discord.
 Lisenssistä ei mainintaa. Tekijä on Otto Toivanen, vuosi 2020.
-Riippuvuudet: Virtualbox
-
+Riippuvuudet:
 
 
 ### c) Testbench. Aja toisen tekemä tila.
 
 Päädyin valitsemaan testiini Lasse Kiljusen Snake-pelin asennuksen, sillä peli vaikutti hauskalta.
+Toimin ohjeiden mukaan ja loin uuden nsnake-directoryn, johon tein init.sls -tiedoston ao. tekstillä: 
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/b78203a9-4c7f-4640-b184-e467e4db076f)
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/97791d81-7443-465b-95f2-f207932733f1)
+
+Yritin ajaa sitä sudo salt '*' state.apply nsnake -komennolla, mutta ei toiminut. Salt kuitenkin näytti toimivan, joten siirryin testaamaan jotain muuta moduulia.
+
+
+
 
 
 
@@ -86,7 +96,7 @@ Päädyin valitsemaan testiini Lasse Kiljusen Snake-pelin asennuksen, sillä pel
 
 1. Moduuli, joka asentaa jotkut tietyt peruskonfiguroinnit uuteen koneeseen.
 2. Moduuli, joka asentaa kahdelle virtuaalikoneelle tietyt ohjelmat(esim micro ja apache
-3.
+3. Moduuli, jolla asentaa uuden 
 4.
 5.
 

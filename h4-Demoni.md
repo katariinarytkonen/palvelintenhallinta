@@ -126,11 +126,25 @@ Kävin muokkaamassa sites-availablessa polkua, josta tämä haki index-sivuston.
 
 Ei auttanut vieläkään. Uusi yritys myöhemmin.
 
+Edit. 10.5. 24 Uusi yritys lähtee käyntiin. Tuhonsin vanhan virtuaalikoneen ja loin uuden. 
 
+Asensin apachen komennolla `sudo apt-get install apache2`. Tarkistin että toimii `sudo systemctl status apache2`.
+
+Asensin myös curlin.
+
+Apache toimii, tarkistan nykyisen kotisivun `curl -s localhost | less ` ja `curl -s localhost | grep title`
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/11a578cd-acad-473b-b6e1-57cd1f184d32)
+
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/69bdec6a-fd54-471b-8725-18dee246ee00)
 
 
 
 ## d) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
+
+
+
 
 
 ## Lähteet

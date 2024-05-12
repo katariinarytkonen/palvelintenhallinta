@@ -778,6 +778,16 @@ sudo salt '*' -l info state.apply
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7fbaffdb-da2a-4737-b12e-5f5642bdfca0)
 
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/e88f515d-f5bc-4c3c-ad18-44921a444b4c)
+
+Tilan ajaminen orjalla ei nyt onnistukaan. Käyn ottamassa moduulieni tiedot talteen, ja pystytän uuden virtuaaliympäristön.
+
+
+
+
+
+
+
 
 
 

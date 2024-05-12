@@ -6,7 +6,7 @@ Projektin tekijänä on Katariina Rytkönen ja projektini lisenssinä on GNU Gen
 
 Moduulin ideana on saada asennettua esim työpaikan uusille tietokoneille firmassa käytettävät oletusohjelmat kerralla keskitetyllä hallinnalla Saltin avulla, ja lisäksi tässä konfiguroidaan koneille palomuuri.
 
-Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin.
+Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin. Thunderbird emailiin, libreoffice tiedostojenkäsittelyyn, micro tekstieditoriksi, Git versionhallintaan ja firefox selaimeksi.
 
 Lähdekoodi tarkemmin luettavissa toisessa projekti-repossa:
 
@@ -1096,9 +1096,9 @@ Tarkistin vielä että luvatut on myös tehty.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/64ce758d-4278-4ecd-bea9-2cdfbefcdec7)
 
-Jes, kaikki toimi. 
+Jes, kaikki toimi.
 
-Olisin halunnut vielä tehdä erinäisiä hienosäätöjä, mutta tyydyn nyt tähän että sain jotain aikaan. 
+Ideana oli tehdä vielä esitystä varten hieman lyhyempi projektisivu, jossa demottuna asiat ilman kaikkea asennusselostusta ja ongelmien ratkomista, mutta tämä nyt ei ehtinyt palautuksen deadlineen. 
 
 ### Lähteet
 

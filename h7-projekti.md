@@ -7,9 +7,8 @@ Projektin tekijänä on Katariina Rytkönen ja projektini lisenssinä on GNU Gen
 Moduulin ideana on saada asennettua esim työpaikan uusille tietokoneille työpaikalla käytettävät oletusohjelmat kerralla keskitetyllä hallinnalla Saltin avulla.
 
 Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin.
-Lisäksi koneelle tulee konfiguroida palomuuri ja__
-
-
+Lisäksi koneelle tulee konfiguroida palomuuri.
+pwd
 ### Virtuaaliympäristön pystyttäminen 
 
 Aloitan moduulin tekemisen luomalla virtuaaliympäristön, eli kaksi konetta Vagrantilla Teron ohjeilla. (https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/?fromSearch=two%20machine%20virtual)
@@ -32,7 +31,6 @@ Hei maailma-moduuliani varten loin salt-kansioon hello-kansion, johon loin sudoe
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/708a7fe5-d79d-4ee1-9ab2-38189d9fd97f)
 
-
 euraavaksi ajoin tilan `sudo salt '*' state.apply hello` -komennolla, ja tarkistin että kaikki toimii:
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/16ab149f-d2b0-4e87-ad3d-d4a89fd90988)
@@ -45,16 +43,13 @@ Loin /srv/saltiin uuden directoryn, omamoduulin. Luon tänne uuden tiedoston ao.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/633a6f48-1c3f-4636-94d0-8114d3818c40)
 
-
 Lisäksi luon /srv/saltiin top-filen, top.sls johon määrään omamoduulin ajettavaksi ohjelmaksi.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/5d43aa14-3608-4bc8-bbec-172a9945ec1e)
 
 Testaan tämän toimintaa ensin paikallisesti `sudo salt-call --local state.apply omamoduuli`. 
 
-Tämä toimii
-
-Seuraavaksi ongelmia tuotti ladattavien pakettien nimet, sillä kaikki ohjelmistot eivät asentuneetkaan ihan niin tarkasti kun olisin toivonut. Testasin libreofficen asennusta, ja se tämä kesti pienen ikuisuuden sillä se asensikin monia muitakin ohjelmia, jotka ilmeisesti ovat tämän toiminnalle olennaisia.
+Tämä toimii, tosin ongelmia tuotti ladattavien pakettien nimet, sillä kaikki ohjelmistot eivät asentuneetkaan ihan niin tarkasti kun olisin toivonut. Testasin libreofficen asennusta, ja se  kesti pienen ikuisuuden, sillä se asensikin monia muitakin ohjelmia, jotka ilmeisesti ovat tämän toiminnalle olennaisia.
 
 
 
@@ -762,8 +757,26 @@ Luon uuden directoryn, `/srv/salt/palomuuri`.
 
 Valitsen palumuuriksi ufwn. 
 
-Tänne teen uuden tiedoston init.sls, johon teen 
+Tänne teen uuden tiedoston init.sls, johon teen palomuurin määrityksiä.
 
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1a72df5e-78ed-4592-8512-c3daa7570b50)
+
+Selvästi koodissani oli jotain vikaa, sillä tämä jäi pyörimään taas kymmeniksi minuuteiksi.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/cd0ee70e-b44b-4878-8957-3f561f57b79d)
+
+Jossain kohtaa painoin enteriä, ja asennus keskeytyi. Mutta näyttäisi kuitenkin toimivan jotenkuten. 
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/b26a1f51-4587-45ac-9e8e-c6014d1f057b)
+
+Lisään top.sls tiedostooni myös palomuuri-moduulini, ja testaan ajaa tämän ensin paikallisesti, sitten orjilla.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/4a0c8487-b53d-4fb1-9fcf-e311c360068a)
+
+sudo salt-call --local -l info state.apply
+sudo salt '*' -l info state.apply
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7fbaffdb-da2a-4737-b12e-5f5642bdfca0)
 
 
 
@@ -776,9 +789,13 @@ Karvinen 2024: Configuration management 2024 spring. Luettavissa:
 
 https://terokarvinen.com/2024/configuration-management-2024-spring/. Luettu 12.5.2024
 
-Karvinen Tero, 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant. Luettavissa:
+Karvinen 2021: Two Machine Virtual Network With Debian 11 Bullseye and Vagrant. Luettavissa:
 
 https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ Luettu 12.5.2024
+
+Karvinen 2016: Instant Firewall Sudo Ufw Enable. Luettavissa:
+
+https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=firewall Luettu 12.5.2024
 
 https://github.com/katariinarytkonen/palvelintenhallinta/blob/main/H2%20Soitto%20Kotiin.md Luettu 12.5.2024
 

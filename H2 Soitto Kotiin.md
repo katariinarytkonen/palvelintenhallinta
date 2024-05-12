@@ -59,6 +59,7 @@ Kaikki toimii molempiin suuntiin, ja näin olen asentanut kaksi virtuaalikonetta
         sudo apt-get update
         sudo apt-get -y install salt-master
         hostname -I
+        sudo apt-get -y install salt-minion
         sudoedit /etc/salt/minion 
         sudo systemctl restast salt-minion.service
         

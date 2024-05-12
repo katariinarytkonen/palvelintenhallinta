@@ -62,7 +62,7 @@ Kaikki toimii molempiin suuntiin, ja näin olen asentanut kaksi virtuaalikonetta
         sudo apt-get -y install salt-minion
         sudoedit /etc/salt/minion 
         sudo systemctl restast salt-minion.service
-        sudo salt-key -a
+        sudo salt-key -A
         
 Asensin Saltin herra-orja-arkkitehtuurin toimimaan verkon yli luomissani virtuaalikoneissa. Tätä varten t001 on herra, ja t002 on orja.
 

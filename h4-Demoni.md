@@ -140,6 +140,30 @@ Apache toimii, tarkistan nykyisen kotisivun `curl -s localhost | less ` ja `curl
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/69bdec6a-fd54-471b-8725-18dee246ee00)
 
 
+-----
+
+Asensin apachen komennolla `sudo apt-get install apache2`. Asensin myös curlin `sudo apt-get -y install curl`.
+
+Korvasin testisivun sisällön komennolla `echo "apachetest" | sudo tee /var/www/html/index.html`
+
+Tämän jälkeen muokkasin omaa sivuani.
+`sudoedit /etc/apache2/sites-available/index.conf`
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7342432a-84f7-4854-aca5-2ceab999822f)
+
+'Potkaistaan demonia', eli uudelleenkäynnistetään sovellus.
+`sudo systemctl restart apache2`
+
+Testasin  että sivu vastaa.
+
+![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/cb601b33-5321-4ec9-bbde-7a284aa2ffd1)
+
+Seuraavaksi tämä automatisoidaan Saltin avulla.
+
+sudo mkdir /srv/salt/apache
+
+
+
+
 
 ## d) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
 

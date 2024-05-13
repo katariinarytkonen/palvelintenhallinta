@@ -1,15 +1,23 @@
 ## Salt-projektini
 
 Seuraavana vuorossa on kurssin loppuharjoitus, miniprojekti Saltilla toteutettuna.
-
 Projektin tekijänä on Katariina Rytkönen ja projektini lisenssinä on GNU General Public License, versio 3.
+
+Projekti suoritettu seuraavalla laitteella:
+
+Tietokone: HP Pavilion x360
+
+Os: Debian 12 bookworm
+
+Prosessori Intel(R) Core(TM) i3-5010U
+
+Virtualisointiympäristönä libvirt ja Virtual Machine Manager sekä vagrant.
 
 Moduulin ideana on saada asennettua esim työpaikan uusille tietokoneille firmassa käytettävät oletusohjelmat kerralla keskitetyllä hallinnalla Saltin avulla, ja lisäksi tässä konfiguroidaan koneille palomuuri.
 
 Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin. Thunderbird emailiin, libreoffice tiedostojenkäsittelyyn, micro tekstieditoriksi, Git versionhallintaan ja firefox selaimeksi.
 
-Lähdekoodi tarkemmin luettavissa toisessa projekti-repossa:
-
+Projektin koodit seuraavassa:
 https://github.com/katariinarytkonen/projekti/tree/main
 
 ### Virtuaaliympäristön pystyttäminen 
@@ -81,14 +89,14 @@ Lisään top.sls tiedostooni myös palomuuri-moduulini, ja testaan ajaa tämän 
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/4a0c8487-b53d-4fb1-9fcf-e311c360068a)
 
-sudo salt-call --local state.apply
-sudo salt '*' state.apply
+`sudo salt-call --local state.apply`
+`sudo salt '*' state.apply`
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/7fbaffdb-da2a-4737-b12e-5f5642bdfca0)
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/e88f515d-f5bc-4c3c-ad18-44921a444b4c)
 
-Tilan ajaminen orjalla ei nyt onnistukaan. Käyn ottamassa moduulieni tiedot talteen, ja pystytän uuden virtuaaliympäristön, sillä olin testannut erinäisiä kill-komentoja eikä mikään näyttänyt nyt toimivan.
+Tilan ajaminen orjalla ei nyt onnistukaan, sillä joku prosessi on käynnissä. Yritin keskeyttää sitä, mutta olin tainnut rikkoa jotain nyt pysyvästi. Otin moduulieni tiedot ylös, ja pystytin virtuaaliympäristöni uudelleen. 
 
 ### hetkeä myöhemmin
 
@@ -98,9 +106,10 @@ Uudella ympäristöllä ja paikallisesti toimii:
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/a975f386-71ac-4399-b390-f38a9e13da0b)
 
-Sama ajetaan vielä orjille:  
+Sama ajetaan vielä orjille: 
 
-vagrant@t001:/srv/salt$ sudo salt '*' -l info state.apply 
+`sudo salt '*' -l info state.apply` 
+
 none:
 ----------
           ID: omamoduuli
@@ -1117,3 +1126,7 @@ https://terokarvinen.com/2016/instant-firewall-sudo-ufw-enable/?fromSearch=firew
 https://github.com/katariinarytkonen/palvelintenhallinta/blob/main/H2%20Soitto%20Kotiin.md Luettu 12.5.2024
 
 https://wiki.debian.org/Firefox Luettu 12.5.2024
+
+https://packages.debian.org/stable/ Luettu 13.5.2024
+
+https://packages.debian.org/stable/editors/ Luettu 13.5.2024

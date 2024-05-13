@@ -26,7 +26,9 @@ Aloitan moduulin tekemisen luomalla virtuaaliympäristön, eli kaksi konetta Vag
 
 ### Herra-orja-arkkitehtuurin määrittely ja hei maailma
 
-Seuraavaksi asensin koneille herra-orja-arkkitehtuurin niin, että t001 on herra, ja t002 orja oman kurssisaporttini ohjeella: https://github.com/katariinarytkonen/palvelintenhallinta/blob/main/H2%20Soitto%20Kotiin.md. Koska tämä on tuolla jo kuvattu kuva kuvalta, en lähde täyttämään nyt omaa projektiani näiden ohjeilla sen tarkemmin.
+Seuraavaksi asensin koneille herra-orja-arkkitehtuurin niin, että t001 on herra, ja t002 orja oman kurssisaporttini ohjeella: https://github.com/katariinarytkonen/palvelintenhallinta/blob/main/H2%20Soitto%20Kotiin.md. 
+
+ Asensin t001 herran komennolla `sudo apt-get -y install salt-master`. Selvitin ip-osoitteen komennolla `hostname -I`, sillä tämä täytyy lisätä minionille jotta tunnistaa master-koneen. Poistuin yhteydestä `exit`-komennolla asentaakseni toisesta koneesta orjan. Komennolla `sudoedit /etc/salt/minion` menin lisäämään tiedostoon herran ip-osoitteen, jotta orja tunnistaa herran ja kaikki toimii kuten pitää. Käynnistän demonin uudelleen `sudo systemctl restast salt-minion.service` ja vaihdoin t002 koneelle hyväksyäkseni avaimen `sudo salt-key -A`.
 
 Kun ympäristö oli toiminnassa ja pystyssä, pääsin luomaan omaa moduuliani. Aloitin moduulin luomisen hei maailmalla, jotta näen kaiken toimivan.
 
@@ -34,7 +36,7 @@ Hei maailma-moduuliani varten loin salt-kansioon hello-kansion, johon loin sudoe
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/708a7fe5-d79d-4ee1-9ab2-38189d9fd97f)
 
-euraavaksi ajoin tilan `sudo salt '*' state.apply hello` -komennolla, ja tarkistin että kaikki toimii:
+Seuraavaksi ajoin tilan `sudo salt '*' state.apply hello` -komennolla, ja tarkistin että kaikki toimii:
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/16ab149f-d2b0-4e87-ad3d-d4a89fd90988)
 
@@ -63,7 +65,7 @@ Luon uuden directoryn, `/srv/salt/palomuuri`.
 
 Valitsen palumuuriksi ufwn. 
 
-Tänne teen uuden tiedoston init.sls, johon teen palomuurin määrityksiä.
+Tänne teen uuden tiedoston init.sls, johon teen palomuurin määrityksiä ja jätän portin 22 auki SSH-yhteyttä varten.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/1a72df5e-78ed-4592-8512-c3daa7570b50)
 
@@ -71,7 +73,7 @@ Selvästi koodissani oli jotain vikaa, sillä tämä jäi pyörimään taas kymm
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/cd0ee70e-b44b-4878-8957-3f561f57b79d)
 
-Jossain kohtaa painoin enteriä, ja asennus keskeytyi. Mutta näyttäisi kuitenkin toimivan jotenkuten. Tämä näyttää jäävän odottamaan vastausta ufw enablen kohdalla, jonka takia jää pyörimään.
+Jossain kohtaa painoin enteriä, ja asennus keskeytyi. Mutta näyttäisi kuitenkin toimivan jotenkuten. Tämä näyttää jäävän odottamaan vastausta ufw enablen kohdalla, jonka takia jää pyörimään. 
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/b26a1f51-4587-45ac-9e8e-c6014d1f057b)
 
@@ -1096,9 +1098,7 @@ Tarkistin vielä että luvatut on myös tehty.
 
 ![image](https://github.com/katariinarytkonen/palvelintenhallinta/assets/164856665/64ce758d-4278-4ecd-bea9-2cdfbefcdec7)
 
-Jes, kaikki toimi.
-
-Ideana oli tehdä vielä esitystä varten hieman lyhyempi projektisivu, jossa demottuna asiat ilman kaikkea asennusselostusta ja ongelmien ratkomista, mutta tämä nyt ei ehtinyt palautuksen deadlineen. 
+Jes, kaikki toimi ja näin voisin asentaa vaikka kuinka monelle koneelle samat ohjelmat ja samat säädöt kerralla. 
 
 ### Lähteet
 

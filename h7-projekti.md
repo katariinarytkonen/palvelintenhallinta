@@ -15,7 +15,7 @@ Virtualisointiympäristönä libvirt ja Virtual Machine Manager sekä vagrant.
 
 Moduulin ideana on saada asennettua esim työpaikan uusille tietokoneille firmassa käytettävät oletusohjelmat kerralla keskitetyllä hallinnalla Saltin avulla, ja lisäksi tässä konfiguroidaan koneille palomuuri.
 
-Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin. Thunderbird emailiin, libreoffice tiedostojenkäsittelyyn, micro tekstieditoriksi, Git versionhallintaan ja firefox selaimeksi.
+Tässä kuvitteellisessa tilanteessa työntekijä tarvitsee koneelleen työnantajan ennalta hyväksymät ohjelmat joita tarvitsee työssään; Mozilla Firefoxin, Gitin, Micron, Libreofficen ja Thunderbirdin. Thunderbird emailiin, libreoffice tiedostojenkäsittelyyn, micro tekstieditoriksi, Git versionhallintaan ja firefox selaimeksi. Tämä voisi myös olla opiskelijan työpöytä.
 
 Projektin koodit seuraavassa:
 https://github.com/katariinarytkonen/projekti/tree/main
